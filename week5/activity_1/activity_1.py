@@ -12,7 +12,7 @@ def main():
     # Main program logic
     # Open the binary file for reading and create output text and bytes files for writing using the context manager
     try:
-        with open("dat.bin", "rb") as file, \
+        with open("data.bin", "rb") as file, \
             open("converted_text.txt", "w") as text_output, \
             open("reversed_bytes.bin", "wb") as bytes_output:
                 # Iterate through each line in the binary file
