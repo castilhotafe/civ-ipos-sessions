@@ -1,0 +1,8 @@
+# Sphinx builds
+**/_build/
+
+# Python venv
+.venv/
+
+# IDE
+.idea/
