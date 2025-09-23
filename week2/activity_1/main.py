@@ -6,7 +6,7 @@ def greet(name):
     print(name)
 
 def main():
-    # gt('John')
+    gt('John')
     student = Student('John', 20, ['Javascript', 'Python'], '10 Somewhere St. WA')
     print(student.student_id)
     student.setId(30)
