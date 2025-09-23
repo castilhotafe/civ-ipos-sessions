@@ -1,8 +1,8 @@
 # test_organization.py
 import unittest
 
-from src.contact import Contact
-from src.organisation import Organisation
+from contact import Contact
+from organisation import Organisation
 
 # Create an organization
 class TestOrganisation(unittest.TestCase):

@@ -9,8 +9,17 @@ class Organisation:
 
     # TODO Step 3 get & set contacts (add and retrieve)
     # TODO behaviours for org: addContact()
+    def __str__(self):
+        return f'{self.name}'
+
+
     def add_contact(self, contact):
         self.contacts.append(contact)
+
+
+    def get_contacts(self):
+        for contact in self.contacts:
+            print(contact)
 
  
 # many contacts

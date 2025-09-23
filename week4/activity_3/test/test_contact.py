@@ -1,7 +1,7 @@
 # test_contact.py
 import unittest
 
-from src.contact import Contact
+from contact import Contact
 
 class TestContact(unittest.TestCase):
 
