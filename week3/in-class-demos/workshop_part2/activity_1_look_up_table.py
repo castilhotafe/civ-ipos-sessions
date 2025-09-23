@@ -13,13 +13,13 @@ def build_catalogue(product_code_grid, product_data_grid):
         for inner_key in product_code_grid[outer_key]:
             print(inner_key)
             # TODO: Retrieve the product code
-
+            product_code = product_code_grid[outer_key][inner_key]
             # TODO: Use the corresponding product data as the value
-            
+            product_data = product_data_grid[outer_key][inner_key]
             # TODO: Add the code-data pair to the catalog
-
+            product_catalogue[product_code] = product_data
     # Return the completed catalog
-
+    return product_catalogue
 
 # Define the product code grid as a dictionary of dictionaries
 product_code_grid = {
