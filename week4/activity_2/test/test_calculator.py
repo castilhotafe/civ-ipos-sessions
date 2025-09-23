@@ -1,5 +1,5 @@
 import unittest
-from src.calculator import add
+from calculator import add
 
 class TestaddFunction(unittest.TestCase):
 
@@ -28,9 +28,30 @@ class TestaddFunction(unittest.TestCase):
 
     # TODO use case - whats left to test???
     # string
+    def test_string_addition(self):
+        with self.assertRaises(TypeError):
+            add("hello", "world")
+
     # boolean
+    def test_boolean_addition(self):
+        with self.assertRaises(TypeError):
+            add(True, False)
+
     # collections other objects
+    def test_collection_addition(self):
+        with self.assertRaises(TypeError):
+            add([1, 2], [3, 4])
+        with self.assertRaises(TypeError):
+            add({'a': 1}, {'b': 2})
+        with self.assertRaises(TypeError):
+            add((1, 2), (3, 4))
+
     # null values
+    def test_none_addition(self):
+        with self.assertRaises(TypeError):
+            add(None, 5)
+        with self.assertRaises(TypeError):
+            add(None, None)
 
         # arrange
 
