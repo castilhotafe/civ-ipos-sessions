@@ -153,6 +153,17 @@ def binary_search(task_list, task_to_find):
     return f"Task '{task_to_find}' not found."
 
 def main():
+    """
+        Entry point of the task management application.
+
+        This function displays a menu to the user, handles input,
+        and calls the appropriate functions to add, delete, list,
+        complete, or sort tasks in a task list.
+
+        Returns
+        -------
+        None
+        """
     # pdb.set_trace()
     task_list = []
 
