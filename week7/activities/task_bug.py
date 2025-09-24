@@ -80,7 +80,21 @@ def delete_task(task_list, index):
         print("Invalid task index.")
 
 def list_tasks(task_list):
-    #pdb.set_trace()
+    """
+    Displays all tasks in the task list with their completion status.
+
+    Parameters
+    ----------
+    task_list : list of tuple
+        A list of tasks, where each task is a tuple (description: str, completed: bool).
+        The description is the task name, and completed indicates if the task is done.
+
+    Returns
+    -------
+    None
+        This function only prints the list of tasks to the console.
+    """
+    # pdb.set_trace()
     if not task_list:
         print("No tasks available.")
         return
