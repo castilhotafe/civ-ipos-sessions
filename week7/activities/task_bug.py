@@ -34,9 +34,26 @@ def add_task(task_list, task):
     task_list.append((task, False))
 
 def mark_task_completed(task_list, index):
+    """
+    Marks a task as completed in the task list if the index is valid.
+
+    Parameters
+    ----------
+    task_list : list of tuple
+        The list of tasks, where each task is represented as a tuple (task_description, is_completed).
+    index : int
+        The index of the task to be marked as completed.
+
+    Returns
+    -------
+    None
+        This function updates the task in-place and prints a message indicating completion or an error if the index is invalid.
+    """
     #pdb.set_trace()
     if index >= 0 and index < len(task_list):
-        task_list[index] = (task_list[index][0], True)
+        task_description = task_list[index][0]
+        task_list[index] = (task_description, True)
+        print(f'task {task_description} completed')
     else:
         print("Invalid task index.")
 
