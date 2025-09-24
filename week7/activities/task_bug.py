@@ -103,7 +103,20 @@ def list_tasks(task_list):
         print(f"{index}. {'[X]' if task[1] else '[ ]'} {task[0]}")
 
 def sort_tasks(task_list):
-    #pdb.set_trace()
+    """
+    Sorts the task list alphabetically by task description.
+
+    Parameters
+    ----------
+    task_list : list of tuple
+        A list of tasks, where each task is a tuple (description: str, completed: bool).
+
+    Returns
+    -------
+    None
+        The original list is sorted in place. The sorted list is printed to the console.
+    """
+    # pdb.set_trace()
     task_list.sort(key=lambda x: x[0])
     print(task_list)
 
