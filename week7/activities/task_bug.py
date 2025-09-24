@@ -58,9 +58,24 @@ def mark_task_completed(task_list, index):
         print("Invalid task index.")
 
 def delete_task(task_list, index):
-    # pdb.set_trace()
+    """
+    Delete a task from the task list at the specified index.
+
+    Parameters
+    ----------
+    task_list : list of tuple
+        The list containing tasks as (description, completed) tuples.
+    index : int
+        The position of the task to be deleted.
+
+    Returns
+    -------
+    None
+        This function modifies the task list in-place and prints the deleted task description.
+    """
     if index >= 0 and index < len(task_list):
-        task_list.remove(task_list[index])
+        removed_task = task_list.pop(index)
+        print(f'Task "{removed_task[0]}" deleted.')
     else:
         print("Invalid task index.")
 
