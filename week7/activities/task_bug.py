@@ -43,17 +43,37 @@ def sort_tasks(task_list):
     task_list.sort(key=lambda x: x[0])
     print(task_list)
 
-def binary_search(tasks, target):
-    low, high = 0, len(tasks) - 1
+def binary_search(task_list, task_to_find):
+    """
+    Perform a binary search to find the index of a task in the sorted list.
+
+    Parameters
+    ----------
+    task_list : list of tuple
+        List of tasks (tuples), where each tuple contains the task description and a completion flag.
+    task_to_find : str
+        The task description to search for.
+
+    Returns
+    -------
+    str
+        A message indicating the index of the found task, or that it was not found.
+    """
+    sorted_list = sorted(task_list, key=lambda x: x[0])
+    low = 0
+    high = len(sorted_list) - 1
+
     while low <= high:
         mid = (low + high) // 2
-        if tasks[mid][0] == target:
-            return mid
-        elif tasks[mid][0] < target:
+        if sorted_list[mid][0] == task_to_find:
+            task_position = task_list.index(sorted_list[mid])
+            return f"Task '{task_to_find}' found at index {task_position}."
+        elif sorted_list[mid][0] < task_to_find:
             low = mid + 1
         else:
             high = mid - 1
-    return -1
+
+    return f"Task '{task_to_find}' not found."
 
 def main():
     # pdb.set_trace()
@@ -86,11 +106,8 @@ def main():
             sort_tasks(task_list)
         elif choice == "6":
             target = input("Enter task description to search: ")
-            index = binary_search(task_list, target)
-            if index != -1:
-                print(f"Task '{target}' found at index {index}.")
-            else:
-                print(f"Task '{target}' not found.")
+            result = binary_search(task_list, target)
+            print(result)
         elif choice == "7":
             sys.exit("Exiting program.")
         else:
