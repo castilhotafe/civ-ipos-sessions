@@ -12,7 +12,25 @@ import pdb
 # import os
 
 def add_task(task_list, task):
-    #pdb.set_trace()
+    """
+    Adds a new task to the list if the input is not empty.
+
+    Parameters
+    ----------
+    task_list : list
+        The list where the new task will be appended.
+    task : str
+        The task description to be added.
+
+    Returns
+    -------
+    None
+        Returns nothing. Prints a cancellation message if input is empty.
+    """
+    task = task.strip()
+    if not task:
+        print("Task addition cancelled.")
+        return
     task_list.append((task, False))
 
 def mark_task_completed(task_list, index):
