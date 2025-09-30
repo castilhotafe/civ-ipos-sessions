@@ -48,7 +48,6 @@ def is_win(player, board_snapshot=board):
                 break
         if row_win:
             return True
-
     #columns
     for col_index in range(3):
         col_win = True
