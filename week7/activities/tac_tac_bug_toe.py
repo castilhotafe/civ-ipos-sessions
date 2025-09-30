@@ -5,10 +5,21 @@ Ensure you step through this program in an IDE debugger to understand how the pr
 board = [[' ' for _ in range(3)] for _ in range(3)]
 
 def print_board():
-    for row in board:
-     
+    """
+    Print the current state of the game board.
+
+    This function iterates over each row of the global board variable,
+    printing cells separated by vertical bars and horizontal dividers between rows.
+
+    Returns
+    -------
+    None
+        This function only prints the board; it does not return a value.
+    """
+    for row_index, row in enumerate(board):
         print('|'.join(row))
-        print('-' * 5)
+        if row_index < len(board) -1:
+            print('-' * 5)
 
 
 def is_win(player, board_snapshot=board):
