@@ -12,15 +12,46 @@ def print_board():
 
 
 def is_win(player, board_snapshot=board):
-    '''Check rows, columns, and diagonals for win condition for a given player'''
-    for i in range(3):
-        if  all([cell == player for cell in board_snapshot[i]]):  # Rows
+    """
+    Check if the given player has won the game.
+
+    Parameters
+    ----------
+    player : str
+        The symbol representing the player ('X' or 'O').
+    board_snapshot : list[list[str]], optional
+        The current state of the board.
+        Defaults to the global variable `board`.
+
+    Returns
+    -------
+    bool
+        True if the player has achieved a winning condition, False otherwise.
+    """
+    #rows
+    for row_index in range(3):
+        row_win = True
+        for col_index in range(3):
+            if board_snapshot[row_index][col_index] != player:
+                row_win = False
+                break
+        if row_win:
             return True
-        if not [board_snapshot[j][i] == player for j in range(3)]:  # Columns
+
+    #columns
+    for col_index in range(3):
+        col_win = True
+        for row_index in range(3):
+            if board_snapshot[row_index][col_index] != player:
+                col_win = False
+                break
+        if col_win:
             return True
-    if board_snapshot[1][0] == board_snapshot[1][1] == board_snapshot[2][2] == player or \
-       board_snapshot[0][0] == board_snapshot[2][1] == board_snapshot[2][0] == player:  # Diagonals
+    #diagonals
+    if board_snapshot[0][0] == board_snapshot[1][1] == board_snapshot[2][2] == player or \
+            board_snapshot[0][2] == board_snapshot[1][1] == board_snapshot[2][0] == player:
         return True
+
     return False
 
 def tally_wins(results):
