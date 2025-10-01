@@ -201,6 +201,20 @@ def binary_search(task_list, task_to_find):
     -------
     str
         A message indicating the index of the found task, or that it was not found.
+    Examples
+    --------
+    >>> tasks_test5 = [("Walk dog", False), ("Do homework", True), ("Clean room", False)]
+    >>> tasks_test6 = tasks_test5.copy()
+    >>> binary_search(tasks_test6, "Do homework")
+    "Task 'Do homework' found at index 1."
+
+    >>> tasks_test7 = tasks_test5.copy()
+    >>> binary_search(tasks_test7, "Clean room")
+    "Task 'Clean room' found at index 2."
+
+    >>> tasks_test8 = tasks_test5.copy()
+    >>> binary_search(tasks_test8, "Cook dinner")
+    "Task 'Cook dinner' not found."
     """
     sorted_list = sorted(task_list, key=lambda x: x[0])
     low = 0
