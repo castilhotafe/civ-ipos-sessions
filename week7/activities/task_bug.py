@@ -11,7 +11,7 @@ import sys
 import pdb
 # import os
 
-def add_task(task_list, task):
+def add_task(task_list=list, task=str):
     """
     Adds a new task to the list if the input is not empty.
 
@@ -48,6 +48,26 @@ def mark_task_completed(task_list, index):
     -------
     None
         This function updates the task in-place and prints a message indicating completion or an error if the index is invalid.
+
+    Examples
+    --------
+    >>> tasks_test1 = [("Task 1", False), ("Task 2", False)]
+    >>> mark_task_completed(tasks_test1, 0)
+    task Task 1 completed
+    >>> tasks_test1
+    [('Task 1', True), ('Task 2', False)]
+
+    >>> tasks_test2 = [("Task A", False), ("Task B", False)]
+    >>> mark_task_completed(tasks_test2, 1)
+    task Task B completed
+    >>> tasks_test2
+    [('Task A', False), ('Task B', True)]
+
+    >>> tasks_test3 = [("Task X", True), ("Task Y", False)]
+    >>> mark_task_completed(tasks_test3, 5)
+    Invalid task index.
+    >>> tasks_test3
+    [('Task X', True), ('Task Y', False)]
     """
     #pdb.set_trace()
     if index >= 0 and index < len(task_list):
