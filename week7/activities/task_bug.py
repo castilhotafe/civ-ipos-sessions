@@ -167,6 +167,20 @@ def sort_tasks(task_list):
     -------
     None
         The original list is sorted in place. The sorted list is printed to the console.
+    Examples
+    --------
+    >>> tasks_original = [("Walk dog", False), ("Do homework", True), ("Clean room", False)]
+    >>> tasks_test = tasks_original.copy()
+    >>> sort_tasks(tasks_test)
+    [('Clean room', False), ('Do homework', True), ('Walk dog', False)]
+    >>> tasks_test
+    [('Clean room', False), ('Do homework', True), ('Walk dog', False)]
+    >>> tasks_original
+    [('Walk dog', False), ('Do homework', True), ('Clean room', False)]
+
+    >>> empty_test = []
+    >>> sort_tasks(empty_test)
+    []
     """
     # pdb.set_trace()
     task_list.sort(key=lambda x: x[0])
