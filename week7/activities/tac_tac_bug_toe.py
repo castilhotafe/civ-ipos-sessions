@@ -71,6 +71,29 @@ def tally_wins(results):
 
 
 def main():
+    """
+    Executes the main logic for a simple 2-player Tic-Tac-Toe game. Players alternate turns
+    to place their marker ('X' or 'O') on a 3x3 grid, aiming to form a winning pattern. The
+    game ends when a player wins or when all moves have been exhausted, resulting in a draw.
+
+    The main function handles user input validation, game state updates, alternation of players,
+    and determination of the game outcome.
+
+    Raises
+    ------
+    ValueError
+        If the user input is not two integers separated by a space, or if the inputs are outside
+        the valid range defined for the board.
+
+    Attributes
+    ----------
+    current_player : str
+        The current player who is taking their turn, represented as 'X' or 'O'.
+    moves : int
+        The count of moves made during the game.
+    results : list of boolean
+        A list storing whether each round resulted in a win (True) or not (False).
+    """
     current_player = 'X'
     moves = 0
     results = []
