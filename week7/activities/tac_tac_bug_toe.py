@@ -115,15 +115,6 @@ def main():
     ValueError
         If the user input is not two integers separated by a space, or if the inputs are outside
         the valid range defined for the board.
-
-    Attributes
-    ----------
-    current_player : str
-        The current player who is taking their turn, represented as 'X' or 'O'.
-    moves : int
-        The count of moves made during the game.
-    results : list of boolean
-        A list storing whether each round resulted in a win (True) or not (False).
     """
     current_player = 'X'
     moves = 0
