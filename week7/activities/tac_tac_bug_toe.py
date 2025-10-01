@@ -22,7 +22,7 @@ def print_board():
             print('-' * 5)
 
 
-def is_win(player, board_snapshot=board):
+def is_win(player, board_snapshot):
     """
     Check if the given player has won the game.
 
@@ -65,7 +65,7 @@ def is_win(player, board_snapshot=board):
     return False
 
 def tally_wins(results):
-    # Leveraging the fact that in Python: True = 1 and False = 0 
+    # Leveraging the fact that in Python: True = 1 and False = 0
     # we can use sum() to count the number of wins by counting all Trues and Falses
     return sum(results)
 
@@ -89,7 +89,7 @@ def main():
             continue
         if board[row][col] == ' ':
             board[row][col] = current_player
-            win = is_win(current_player)
+            win = is_win(current_player, board)
             results.append(win)
             if win:
                 print_board()
