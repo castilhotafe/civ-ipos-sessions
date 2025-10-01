@@ -84,6 +84,9 @@ def main():
         except ValueError:
             print("Invalid input! Please enter two numbers separated by a space (e.g., '0 2').")
             continue
+        if (row < 0 or row > 2) or (col < 0 or col > 2):
+            print("Invalid input! Row and column must be between 0 and 2.")
+            continue
         if board[row][col] == ' ':
             board[row][col] = current_player
             win = is_win(current_player)
