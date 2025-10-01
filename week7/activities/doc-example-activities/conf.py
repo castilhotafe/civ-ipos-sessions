@@ -9,40 +9,52 @@
 
 import os
 import sys
-sys.path.insert(0, os.path.abspath('../src'))
+from pathlib import Path
+
+# Adiciona a pasta 'activities' ao sys.path
+sys.path.insert(0, os.path.abspath('../'))
 
 
 project = 'Sphinx tutorial - tac_tac_bug_toe - task_bug'
 copyright = '2025, Marcos Castilho'
 author = 'Marcos Castilho'
-release = '0.1'
+release = '0/0.1'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = ['myst_parser', 'sphinx.ext.mathjax', 'sphinx.ext.autodoc', 'sphinx.ext.napoleon']
-
-napoleon_google_docstring = False
-napoleon_numpy_docstring = True
-
-autodoc2_packages = [
-    {
-        "path": "src",
-        "module": "tac_tac_bug_toe",
-    },
-    {
-        "path": "src",
-        "module": "task_bug",
-    }
-]
+extensions = ['myst_parser','sphinx.ext.autodoc',
+              'sphinx.ext.napoleon']
 
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 
 
+
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = 'groundwork'
-html_static_path = ['_static']
+html_theme = 'sphinx_rtd_theme'
+#html_static_path = ['_static']
+
+
+# Autodoc settings
+autodoc_typehints = "description"
+
+
+# Napoleon settings
+napoleon_google_docstring = True
+napoleon_numpy_docstring = True
+napoleon_include_init_with_doc = False
+napoleon_include_private_with_doc = False
+napoleon_include_special_with_doc = True
+napoleon_use_admonition_for_examples = False
+napoleon_use_admonition_for_notes = False
+napoleon_use_admonition_for_references = False
+napoleon_use_ivar = False
+napoleon_use_param = True
+napoleon_use_rtype = True
+napoleon_preprocess_types = False
+napoleon_type_aliases = None
+napoleon_attr_annotations = True
