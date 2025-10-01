@@ -38,6 +38,37 @@ def is_win(player, board_snapshot):
     -------
     bool
         True if the player has achieved a winning condition, False otherwise.
+    Examples
+    --------
+    >>> test_board1 = [['X', 'X', 'X'],
+    ...          ['O', ' ', 'O'],
+    ...          [' ', ' ', ' ']]
+    >>> is_win('X', test_board1)
+    True
+
+    >>> test_board2 = [['O', 'X', ' '],
+    ...          ['O', 'X', ' '],
+    ...          ['O', ' ', 'X']]
+    >>> is_win('O', test_board2)
+    True
+
+    >>> test_board3 = [['X', 'O', ' '],
+    ...          ['O', 'X', ' '],
+    ...          [' ', ' ', 'X']]
+    >>> is_win('X', test_board3)
+    True
+
+    >>> test_board4 = [[' ', ' ', 'O'],
+    ...          [' ', 'O', 'X'],
+    ...          ['O', ' ', 'X']]
+    >>> is_win('O', test_board4)
+    True
+
+    >>> test_board5 = [['X', 'O', 'X'],
+    ...          ['O', 'O', 'X'],
+    ...          ['X', 'X', 'O']]
+    >>> is_win('X', test_board5)
+    False
     """
     #rows
     for row_index in range(3):
@@ -128,4 +159,7 @@ def main():
 
 
 if __name__ == "__main__":
+    import doctest
+
+    doctest.testmod(verbose=True)
     main()
