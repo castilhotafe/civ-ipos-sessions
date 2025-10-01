@@ -26,6 +26,23 @@ def add_task(task_list=list, task=str):
     -------
     None
         Returns nothing. Prints a cancellation message if input is empty.
+    Examples
+    --------
+    >>> my_tasks = []
+    >>> add_task(my_tasks, "Buy milk")
+    >>> my_tasks
+    [('Buy milk', False)]
+
+    >>> my_tasks = []
+    >>> add_task(my_tasks, "   Learn Python   ")
+    >>> my_tasks
+    [('Learn Python', False)]
+
+    >>> my_tasks = []
+    >>> add_task(my_tasks, "    ")
+    Task addition cancelled.
+    >>> my_tasks
+    []
     """
     task = task.strip()
     if not task:
@@ -92,6 +109,21 @@ def delete_task(task_list, index):
     -------
     None
         This function modifies the task list in-place and prints the deleted task description.
+    Examples
+    --------
+    >>> tasks_original = [("Study", False), ("Exercise", False), ("Read", False)]
+    >>> tasks_copy = tasks_original.copy()
+    >>> delete_task(tasks_copy, 1)
+    Task "Exercise" deleted.
+    >>> tasks_copy
+    [('Study', False), ('Read', False)]
+    >>> tasks_original
+    [('Study', False), ('Exercise', False), ('Read', False)]
+
+    >>> delete_task(tasks_copy, 5)
+    Invalid task index.
+    >>> tasks_copy
+    [('Study', False), ('Read', False)]
     """
     if index >= 0 and index < len(task_list):
         removed_task = task_list.pop(index)
@@ -222,4 +254,6 @@ def main():
             print("Invalid choice. Please try again.")
 
 if __name__ == "__main__":
+    import doctest
+    doctest.testmod(verbose=True)
     main()
